@@ -1,65 +1,291 @@
 <?php
 /**
  * The template for displaying search results pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
+ * 
+ * @subpackage My Resume
+ * @since 1.0
+ * @version 0.1
  */
 
-get_header();
+get_header(); ?>
 
-if ( have_posts() ) {
-	?>
-	<header class="page-header alignwide">
-		<h1 class="page-title">
-			<?php
-			printf(
-				/* translators: %s: Search term. */
-				esc_html__( 'Results for "%s"', 'twentytwentyone' ),
-				'<span class="page-description search-term">' . esc_html( get_search_query() ) . '</span>'
-			);
-			?>
-		</h1>
-	</header><!-- .page-header -->
+<div class="container">
 
-	<div class="search-result-count default-max-width">
-		<?php
-		printf(
-			esc_html(
-				/* translators: %d: The number of search results. */
-				_n(
-					'We found %d result for your search.',
-					'We found %d results for your search.',
-					(int) $wp_query->found_posts,
-					'twentytwentyone'
-				)
-			),
-			(int) $wp_query->found_posts
-		);
-		?>
-	</div><!-- .search-result-count -->
-	<?php
-	// Start the Loop.
-	while ( have_posts() ) {
-		the_post();
+	<header class="page-header">
+		<?php if ( have_posts() ) : ?>
+			<h2 class="search-title"><?php /* translators: %s: search term */ printf( esc_html__( 'Search Results for: %s','my-resume'), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h2>
+		<?php else : ?>
+			<h3 class="page-title"><?php esc_html_e( 'Nothing Found', 'my-resume' ); ?></h3>
+		<?php endif; ?>
+	</header>
 
-		/*
-		 * Include the Post-Format-specific template for the content.
-		 * If you want to override this in a child theme, then include a file
-		 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-		 */
-		get_template_part( 'template-parts/content/content-excerpt', get_post_format() );
-	} // End the loop.
+	<div class="content-area">
+		<main id="skip-content" class="site-main" role="main">
+			<?php $my_resume_layout_option = get_theme_mod( 'my_resume_theme_options',__( 'Right Sidebar','my-resume' ) );
+		    if($my_resume_layout_option == 'Left Sidebar'){ ?>
+		    	<div class="row">
+			        <div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-1'); ?></div>
+			        <div class="content_area col-lg-8 col-md-8">
+				    	<section id="post_section">
+							<?php
+							if ( have_posts() ) :
+								/* Start the Loop */
+								while ( have_posts() ) : the_post();
 
-	// Previous/next page navigation.
-	twenty_twenty_one_the_posts_navigation();
+									get_template_part( 'template-parts/post/content' );
 
-	// If no content, include the "No posts found" template.
-} else {
-	get_template_part( 'template-parts/content/content-none' );
-}
+								endwhile; // End of the loop.
 
-get_footer();
+								else : ?>
+
+								<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'my-resume' ); ?></p>
+								<?php
+									get_search_form();
+
+							endif;
+							?>
+							<div class="navigation">
+				                <?php
+				                    // Previous/next page navigation.
+				                    the_posts_pagination( array(
+				                        'prev_text'          => __( 'Previous page', 'my-resume' ),
+				                        'next_text'          => __( 'Next page', 'my-resume' ),
+				                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'my-resume' ) . ' </span>',
+				                    ) );
+				                ?>
+				                <div class="clearfix"></div>
+				            </div>
+						</section>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			<?php }else if($my_resume_layout_option == 'Right Sidebar'){ ?>
+				<div class="row">
+					<div class="content_area col-lg-8 col-md-8">
+						<section id="post_section">
+							<?php
+							if ( have_posts() ) :
+								/* Start the Loop */
+								while ( have_posts() ) : the_post();
+
+									get_template_part( 'template-parts/post/content' );
+
+								endwhile; // End of the loop.
+
+								else : ?>
+
+								<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'my-resume' ); ?></p>
+								<?php
+									get_search_form();
+
+							endif;
+							?>
+							<div class="navigation">
+				                <?php
+				                    // Previous/next page navigation.
+				                    the_posts_pagination( array(
+				                        'prev_text'          => __( 'Previous page', 'my-resume' ),
+				                        'next_text'          => __( 'Next page', 'my-resume' ),
+				                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'my-resume' ) . ' </span>',
+				                    ) );
+				                ?>
+				                <div class="clearfix"></div>
+				            </div>
+						</section>
+					</div>
+					<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-2'); ?>						
+					</div>
+				</div>
+			<?php }else if($my_resume_layout_option == 'One Column'){ ?>
+				<div class="content_area">
+					<section id="post_section">
+						<?php
+						if ( have_posts() ) :
+							/* Start the Loop */
+							while ( have_posts() ) : the_post();
+
+								get_template_part( 'template-parts/post/content' );
+
+							endwhile; // End of the loop.
+
+							else : ?>
+
+							<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'my-resume' ); ?></p>
+							<?php
+								get_search_form();
+
+						endif;
+						?>
+						<div class="navigation">
+			                <?php
+			                    // Previous/next page navigation.
+			                    the_posts_pagination( array(
+			                        'prev_text'          => __( 'Previous page', 'my-resume' ),
+			                        'next_text'          => __( 'Next page', 'my-resume' ),
+			                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'my-resume' ) . ' </span>',
+			                    ) );
+			                ?>
+			                <div class="clearfix"></div>
+			            </div>
+					</section>
+				</div>
+			<?php }else if($my_resume_layout_option == 'Three Columns'){ ?>	
+				<div class="row">
+					<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1'); ?></div>	
+					<div class="content_area col-lg-6 col-md-6">
+						<section id="post_section">
+							<?php
+							if ( have_posts() ) :
+								/* Start the Loop */
+								while ( have_posts() ) : the_post();
+
+									get_template_part( 'template-parts/post/content' );
+
+								endwhile; // End of the loop.
+
+								else : ?>
+
+								<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'my-resume' ); ?></p>
+								<?php
+									get_search_form();
+
+							endif;
+							?>
+							<div class="navigation">
+				                <?php
+				                    // Previous/next page navigation.
+				                    the_posts_pagination( array(
+				                        'prev_text'          => __( 'Previous page', 'my-resume' ),
+				                        'next_text'          => __( 'Next page', 'my-resume' ),
+				                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'my-resume' ) . ' </span>',
+				                    ) );
+				                ?>
+				                <div class="clearfix"></div>
+				            </div>
+						</section>
+					</div>
+					<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2'); ?>
+					</div>
+				</div>
+			<?php }else if($my_resume_layout_option == 'Four Columns'){ ?>
+				<div class="row">
+					<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
+					<div class="content_area col-lg-3 col-md-3">
+						<section id="post_section">
+							<?php
+							if ( have_posts() ) :
+								/* Start the Loop */
+								while ( have_posts() ) : the_post();
+
+									get_template_part( 'template-parts/post/content' );
+
+								endwhile; // End of the loop.
+
+								else : ?>
+
+								<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'my-resume' ); ?></p>
+								<?php
+									get_search_form();
+
+							endif;
+							?>
+							<div class="navigation">
+				                <?php
+				                    // Previous/next page navigation.
+				                    the_posts_pagination( array(
+				                        'prev_text'          => __( 'Previous page', 'my-resume' ),
+				                        'next_text'          => __( 'Next page', 'my-resume' ),
+				                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'my-resume' ) . ' </span>',
+				                    ) );
+				                ?>
+				                <div class="clearfix"></div>
+				            </div>
+						</section>
+					</div>
+					<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
+			        <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-3'); ?></div>
+		        </div>
+	    	<?php }else if($my_resume_layout_option == 'Grid Layout'){ ?>
+		    	<div class="row">
+			    	<div class="content_area col-lg-8 col-md-8">
+						<section id="post_section">
+							<div class="row">
+								<?php
+								if ( have_posts() ) :
+
+									/* Start the Loop */
+									while ( have_posts() ) : the_post();
+
+										get_template_part( 'template-parts/post/grid-layout', get_post_format() );
+
+									endwhile;
+
+									else : ?>
+
+									<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'my-resume' ); ?></p>
+									<?php
+										get_search_form();
+
+								endif;
+								?>
+								<div class="navigation">
+					                <?php
+					                    // Previous/next page navigation.
+					                    the_posts_pagination( array(
+					                        'prev_text'          => __( 'Previous page', 'my-resume' ),
+					                        'next_text'          => __( 'Next page', 'my-resume' ),
+					                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'my-resume' ) . ' </span>',
+					                    ) );
+					                ?>
+					                <div class="clearfix"></div>
+					            </div>
+							</div>
+						</section>
+					</div>
+					<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-1'); ?>
+					</div>
+				</div>	
+			<?php } else { ?>
+					<div class="row">
+						<div class="content_area col-lg-8 col-md-8">
+							<section id="post_section">
+								<?php
+								if ( have_posts() ) :
+
+									/* Start the Loop */
+									while ( have_posts() ) : the_post();
+
+										get_template_part( 'template-parts/post/grid-layout', get_post_format() );
+
+									endwhile;
+
+									else : ?>
+
+									<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'my-resume' ); ?></p>
+									<?php
+										get_search_form();
+
+								endif;
+								?>
+								<div class="navigation">
+					                <?php
+					                    // Previous/next page navigation.
+					                    the_posts_pagination( array(
+					                        'prev_text'          => __( 'Previous page', 'my-resume' ),
+					                        'next_text'          => __( 'Next page', 'my-resume' ),
+					                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'my-resume' ) . ' </span>',
+					                    ) );
+					                ?>
+					                <div class="clearfix"></div>
+					            </div>
+							</section>
+						</div>
+						<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-1'); ?>
+						</div>
+					</div>
+			<?php } ?>
+		</main>
+	</div>
+</div>
+
+<?php get_footer();

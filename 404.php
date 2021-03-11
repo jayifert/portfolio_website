@@ -1,27 +1,30 @@
 <?php
 /**
  * The template for displaying 404 pages (not found)
- *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
+ * @subpackage My Resume
+ * @since 1.0
+ * @version 0.1
  */
 
-get_header();
-?>
+get_header(); ?>
 
-	<header class="page-header alignwide">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing here', 'twentytwentyone' ); ?></h1>
-	</header><!-- .page-header -->
+<div class="container">
+	<div id="primary" class="content-area">
+		<main id="skip-content" class="site-main" role="main">
+			<section class="error-404 not-found">
+				<header class="page-header">
+					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'my-resume' ); ?></h1>
+					<div class="home-btn">
+						<a href="<?php echo esc_url( home_url() ); ?>"><?php esc_html_e( 'Return to home page', 'my-resume' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Return to home page', 'my-resume' ); ?></span></a>
+					</div>
+				</header>
+				<div class="page-content">
+					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'my-resume' ); ?></p>
+					<?php get_search_form(); ?>
+				</div>
+			</section>
+		</main>
+	</div>
+</div>
 
-	<div class="error-404 not-found default-max-width">
-		<div class="page-content">
-			<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentytwentyone' ); ?></p>
-			<?php get_search_form(); ?>
-		</div><!-- .page-content -->
-	</div><!-- .error-404 -->
-
-<?php
-get_footer();
+<?php get_footer();

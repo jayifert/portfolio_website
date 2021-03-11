@@ -1,32 +1,63 @@
 <?php
 /**
- * The header.
+ * The header for our theme
  *
- * This is the template that displays all of the <head> section and everything up until main.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
+ * @subpackage My Resume
+ * @since 1.0
+ * @version 0.1
  */
 
-?>
-<!doctype html>
-<html <?php language_attributes(); ?> <?php twentytwentyone_the_html_classes(); ?>>
+?><!DOCTYPE html>
+<html <?php language_attributes(); ?> class="no-js no-svg">
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'twentytwentyone' ); ?></a>
 
-	<?php get_template_part( 'template-parts/header/site-header' ); ?>
+<?php if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+} else {
+    do_action( 'wp_body_open' );
+}?>
 
-	<div id="content" class="site-content">
-		<div id="primary" class="content-area">
-			<main id="main" class="site-main" role="main">
+<a class="screen-reader-text skip-link" href="#skip-content"><?php esc_html_e( 'Skip to content', 'my-resume' ); ?></a>
+
+<div class="row">
+	<div class="col-lg-2 col-md-3 left-header">
+		<div id="header">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-9">
+					<div class="logo-initials">
+	                	<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_html(get_theme_mod('my_resume_show_site_title_initials','')); ?></a></h1>
+				    </div>
+				</div>
+				<div class="col-3">
+					<?php if(has_nav_menu('primary')){ ?>
+					    <div class="toggle-menu responsive-menu">
+					        <button onclick="my_resume_open()" role="tab" class="mobile-menu"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','my-resume'); ?></span></button>
+					    </div>
+					<?php }?>
+				</div>
+			</div>
+			<div class="menu-section">
+				<div id="sidelong-menu" class="nav sidenav">
+		            <nav id="primary-site-navigation" class="nav-menu" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'my-resume' ); ?>">
+		              	<?php if(has_nav_menu('primary')){
+		                    wp_nav_menu( array( 
+								'theme_location' => 'primary',
+								'container_class' => 'main-menu-navigation clearfix' ,
+								'menu_class' => 'clearfix',
+								'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
+								'fallback_cb' => 'wp_page_menu',
+		                    ) ); 
+		              	} ?>
+		              	<a href="javascript:void(0)" class="closebtn responsive-menu" onclick="my_resume_close()"><i class="fas fa-times"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','my-resume'); ?></span></a>
+		            </nav>
+		        </div>
+		    </div>
+		</div>
+	</div>
+	<div class="col-lg-10 col-md-9 pl-0">

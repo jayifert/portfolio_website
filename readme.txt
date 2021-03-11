@@ -1,109 +1,149 @@
-=== Twenty Twenty-One ===
-Contributors: wordpressdotorg
-Requires at least: 5.3
-Tested up to: 5.6
-Requires PHP: 5.6
-Stable tag: 1.2
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+=== My Resume ===
+Contributors: Luzuk
+Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-colors, custom-background, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, full-width-template, threaded-comments, translation-ready, blog, e-commerce, portfolio
+Requires at least: 5.0
+Tested up to: 5.5
+Requires PHP: 5.2.4
+Stable tag: 1.3
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+Online CV Resume is the perfect product for you to make a great first impression. It is the way for you to create your personal website of your achievements and experiences .It is SEO optimized, multipurpose, multilingual and has responsive design. The Theme has a well designed layout but with customization features you get complete authority over it. 
 
 == Description ==
 
-Twenty Twenty-One is a blank canvas for your ideas and it makes the block editor your best brush.
+Online CV Resume is the perfect product for you to make a great first impression. It is the way for you to create your personal website of your job, skills, achievements and experiences .It is SEO optimized, multipurpose, multilingual and has responsive design. The Theme has a well designed layout but with customization features you get complete authority over it. You can present your profile digitally with spectacular design.You can create your website or vCard in no time. This theme is made with a bootstrap framework which gives it robust functioning. It is clean coded with mobile friendly layout. With the customization feature you will be able to make any changes you want.The modern design ensures better presentation of your portfolio. It has a responsive design with CTA i.e Call To Action button for fast responses and loading speed.  This theme is exceptional for developer, designer, programmer, freelancer, writer, lawyer, musician, trainer, photographer or any other professions. With powerful RyanCV and all the ready-made layouts and components. This theme has minimal coding to ensure superfast loading.
 
-With new block patterns, which allow you to create a beautiful layout in a matter of seconds, this theme’s soft colors and eye-catching — yet timeless — design will let your work shine.
+Homepage Setup:
+====================
 
-Take it for a spin! See how Twenty Twenty-One elevates your portfolio, business website, or personal blog.
+1. Go to Dashboard >> Pages >> Add New, Create a new page and name it as "Home" then select the template "Custom Home Page" and publish it.
 
-== Installation ==
+2. Go to Dashboard >> Settings >> Reading, Select the option of Static Page, now select the page you created to be the homepage.
 
-1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in Twenty Twenty-One in the search form and press the 'Enter' key on your keyboard.
-3. Click on the 'Activate' button to use your new theme right away.
-4. Go to INSERT ABOUT PAGE for a guide on how to customize this theme.
-5. Navigate to Appearance > Customize in your admin panel and customize to your taste.
+Menu Icons:
+============
 
-== Privacy ==
-Twenty Twenty-One uses LocalStorage to save the setting when Dark Mode support is turned on or off.
-LocalStorage is necessary for the setting to work and is only used when a user clicks on the Dark Mode button.
-No data is saved in the database or transferred.
+1. Dashboard >> Appearance >> Menus, add pages for menu & on the top their is a screen option where you have to check the CSS Classes checkbox then in every menu item you can add font awesome icon class.
+
+Banner Section:
+================
+
+1. Go to Dashboard >> Pages >> Add New, Create a new Page and name it, set it's featured image of size (800px 450px), add the content and publish the page.
+
+2. Go to Customizer >> Theme Settings >> Banner Section, select the page of banner that you have created, add designation & social icon links.
+
+Testimonials Section:
+======================
+
+1. Go to Dashboard >> Posts >> Category, add new category for testimmonial name it and publish it.
+
+2. Go to Dashboard >> Posts >> Add New, Create a new Post and name it, set it's featured image, add the content, assign the testimmonials category and publish the page. Repeat the step for other testimmonials posts.
+
+3. Go to Customizer >> Theme Settings >> Testimonials Section, add testimmonials section title and select their testimmonial category and publish it.
+
+Our Skills:
+===========
+
+1. Go to Dashboard >> Posts >> Category, add new category for skills name it and publish it.
+
+2. Go to Dashboard >> Posts >> Add New, Create a new Post and name it, set it's featured image, add the content, assign the skills category and publish the page. Repeat the step for other Skills posts.
+
+3. Go to Customizer >> Theme Settings >> Our Skills, add Skills section title and select their Skills category and publish it.
+
+Footer Section:
+====================
+
+1. Go to Dashboard >> Appearance >> Widgets, here you can add widgets to the footer widgets areas, which can be seen in footer.
+
+Copyright Text:
+====================
+
+1. Go to Customizer >> Theme Settings >> Footer Text, add footer text here.
+
+== Resources ==
+
+My Resume WordPress Theme, Copyright 2020 Luzuk
+My Resume is distributed under the terms of the GNU GPL
+
+My Resume bundles the following third-party resources:
+
+* Bootstrap
+  - Mark Otto and Jacob Thornton
+  - copyright 2011-2018, Mark Otto and Jacob Thornton
+  - https://github.com/twbs/bootstrap/releases/download/v4.0.0/bootstrap-4.0.0-dist.zip 
+  - License: MIT License (MIT) 
+  - https://github.com/twbs/bootstrap/blob/master/LICENSE
+
+* HTML5 Shiv 
+  - Alexander Farkas
+  - Copyright 2014, Alexander Farkas
+  - https://github.com/aFarkas/html5shiv
+  - Licenses: MIT/GPL2
+  - https://github.com/aFarkas/html5shiv
+
+* Font Awesome 
+  - Dave Gandy
+  - Copyright July 12, 2018, Dave Gandy 
+  - https://github.com/FortAwesome/Font-Awesome.git
+  - License: Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
+  - http://fontawesome.com/license
+
+* Superfish 
+  - Joeldbirch 
+  - Copyright 2013, Justin Tadlock 
+  - https://github.com/joeldbirch/superfish.git 
+  - License: Free to use and abuse under the MIT license. v1.7.9 
+  - https://github.com/joeldbirch/superfish/blob/master/MIT-LICENSE.txt
+
+* PSR-4 autoloader
+  - Justin Tadlock
+  - License: https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+  - Source: https://github.com/WPTRT/autoload
+
+* CustomizeSectionButton
+  - Justin Tadlock
+  - Copyright 2019, Justin Tadlock.
+  - License: https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+  - https://github.com/WPTRT/customize-section-button
+
+* Screenshot Images
+   	Pxhere Images
+  	License: CC0 1.0 Universal (CC0 1.0) 
+  	Source: https://pxhere.com/en/license
+
+  	Banner image
+  	License: CC0 1.0 Universal (CC0 1.0)
+  	Source: https://pxhere.com/en/photo/1058103
+
+    Testimonial image
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://pxhere.com/en/photo/1348714
+
+    Testimonial image 
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://pxhere.com/en/photo/649372
+
+    Testimonial image
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://pxhere.com/en/photo/1332432
 
 == Changelog ==
 
-= 1.2 =
-* Released: March 9, 2021
-
-https://wordpress.org/support/article/twenty-twenty-one-changelog#Version_1.2
+= 1.0 =
+  - Initial Version Released.
 
 = 1.1 =
-* Released: December 22, 2020
+  - Removed the translation from default.
+  - Added fontawesome icon in the screenshot.
+  - Changed the height and width of custom header image.
 
-https://wordpress.org/support/article/twenty-twenty-one-changelog#Version_1.1
+= 1.2 =
+  - Changed the minified code to unminified.
+  - Added the major versions. 
 
-= 1.0 =
-* Released: December 8, 2020
-
-https://wordpress.org/support/article/twenty-twenty-one-changelog#Version_1.0
-
-== Copyright ==
-
-Twenty Twenty-One WordPress Theme, 2020-2021 WordPress.org
-Twenty Twenty-One is distributed under the terms of the GNU GPL.
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-
-
-Twenty Twenty-One is derived from Seedlet, (C) 2020 Automattic, Inc.
-
-Twenty Twenty-One is also based on:
-
-Twenty Nineteen. 2018-2021 WordPress.org
-Twenty Nineteen is distributed under the terms of the GNU GPL v2 or later.
-
-Twenty Seventeen. Copyright (C) 2016-2021 WordPress.org
-Twenty Seventeen is distributed under the terms of the GNU GPL v2 or later.
-
-Twenty Sixteen. Copyright (C) 2015-2021 WordPress.org
-Twenty Sixteen is distributed under the terms of the GNU GPL v2 or later.
-
-Twenty Twenty. Copyright (C) 2020-2021 WordPress.org
-Twenty Twenty is distributed under the terms of the GNU GPL v2 or later.
-
-Underscores https://underscores.me/, Copyright (C) 2012-2021 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
-
-Unless otherwise noted, the icons in this theme are derived from the WordPress
-Icons Library, licensed under the terms of the GNU GPL v2 or later.
-https://github.com/WordPress/gutenberg/tree/master/packages/icons
-
-This theme bundles the following third-party resources:
-
-input[type='checkbox'], input[type='radio'], input[type='ranged'],
-https://css-tricks.com/custom-styling-form-inputs-with-modern-css-features/
-https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
-https://codepen.io/aaroniker/pen/ZEYoxEY Copyright (c) 2020 Aaron Iker
-https://codepen.io/chriscoyier/pen/FtnAa Copyright (c) 2020 Chris Coyier
-License: MIT.
-
-Images
-Art by Berthe Morisot 1841-1895. Public domain.
-https://www.wikiart.org/en/berthe-morisot/playing-in-the-sand
-https://www.wikiart.org/en/berthe-morisot/roses-tremieres-hollyhocks-1884
-https://www.wikiart.org/en/berthe-morisot/young-woman-in-mauve
-https://www.wikiart.org/en/berthe-morisot/in-the-bois-de-boulogne
-https://www.wikiart.org/en/berthe-morisot/daffodils
-https://www.wikiart.org/en/berthe-morisot/self-portrait-1885
-https://www.wikiart.org/en/berthe-morisot/the-garden-at-bougival-1884
-https://www.wikiart.org/en/berthe-morisot/villa-with-orange-trees-nice
-https://www.wikiart.org/en/berthe-morisot/reading
+= 1.3 =
+  - Removed text-domain from default value in Customizer.
+  - added esc_attr in searchform.php file.
+  - added underline in links within content.
+  - added credit link in footer text.
